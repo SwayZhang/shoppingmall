@@ -65,6 +65,10 @@
       this.getHomeGoods('pop')      //首页多个数据的获取 赋值
       this.getHomeGoods('new')
       this.getHomeGoods('sell')
+
+      this.$bus.$on('itemImageLoad',() => {
+        this.$refs.scroll.refresh()
+      })
     },
     computed:{
       showGoods(){
